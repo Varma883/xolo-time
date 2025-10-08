@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiUsers, FiBriefcase, FiZap, FiTarget, FiActivity, FiSettings } from "react-icons/fi"; // Example icons
 import { FiCheck } from 'react-icons/fi';
+import  solutionImg from "../assets/demo_feature_3.jpeg"   
 
 
 const solutions = [
@@ -67,40 +68,85 @@ const SolutionsPage = () => {
   return (
     <div className="bg-gray-50 font-sans">
       {/* Hero Banner Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-blue-600 to-cyan-500 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
-        <div className="mx-auto px-4 relative z-10 max-w-7xl text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
-          >
-            Solutions Tailored for Your Success
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90"
-          >
-            Xolo Time helps teams of all sizes and industries overcome
-            productivity challenges with intelligent time tracking and management.
-          </motion.p>
-          <motion.a
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            href="#explore-solutions"
-            className="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300"
-          >
-            Explore Our Solutions
-          </motion.a>
-        </div>
-      </section>
+      <section
+  className="relative py-24 px-6 lg:px-20 overflow-hidden"
+  style={{
+    background:
+      "radial-gradient(1000px 600px at 80% 10%, rgba(6,182,212,0.15), transparent 60%), radial-gradient(1000px 600px at 10% 40%, rgba(37,99,235,0.18), transparent 55%), linear-gradient(180deg, #f8fbff 0%, #ffffff 40%, rgba(219,234,254,0.2) 100%)",
+  }}
+>
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    {/* LEFT CONTENT */}
+    <motion.div
+      initial={{ opacity: 0, x: -60 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+      className="space-y-8"
+    >
+      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-gray-900">
+        Solutions Tailored for{" "}
+        <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          Your Success
+        </span>
+      </h1>
+
+      <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
+        Empower teams across all industries with intelligent time tracking,
+        workforce management, and productivity optimization—crafted to help you
+        achieve measurable results faster.
+      </p>
+
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 250 }}
+      >
+        <a
+          href="#explore-solutions"
+          className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-full hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] transition-all duration-300"
+        >
+          Explore Solutions →
+        </a>
+      </motion.div>
+    </motion.div>
+
+    {/* RIGHT ILLUSTRATION */}
+    <motion.div
+      className="relative flex justify-center lg:justify-end items-center"
+      initial={{ opacity: 0, x: 80 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+    >
+      <motion.div
+        className="relative w-full max-w-md"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        {/* Image Placeholder */}
+        <img
+          src={solutionImg} // import your image here
+          alt="Solutions Dashboard"
+          className="relative z-10 rounded-3xl shadow-[0_20px_60px_rgba(37,99,235,0.25)] w-full hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+        />
+
+        {/* Glowing Backgrounds */}
+        <div className="absolute -inset-14 bg-gradient-to-r from-blue-500/30 via-cyan-400/25 to-purple-400/25 blur-3xl rounded-full -z-10"></div>
+        <div className="absolute -top-10 right-0 w-28 h-28 bg-cyan-300/20 blur-2xl rounded-full animate-pulse"></div>
+        <div className="absolute bottom-0 -left-10 w-24 h-24 bg-blue-400/15 blur-2xl rounded-full animate-pulse delay-500"></div>
+
+        {/* Rotating Halo */}
+        <motion.div
+          className="absolute -inset-14 -z-20 rounded-full overflow-hidden"
+          animate={{ rotate: [0, 360] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="w-full h-full bg-[conic-gradient(from_0deg,rgba(34,211,238,0.4),rgba(59,130,246,0.35),rgba(147,51,234,0.3),rgba(34,211,238,0.4))] blur-[80px] opacity-90 rounded-full"></div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Solutions Grid */}
       <section className="py-20 bg-white" id="explore-solutions">
