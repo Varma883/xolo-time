@@ -236,7 +236,7 @@ const SolutionsPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-center">
+      {/* <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-center">
         <div className="mx-auto px-4 max-w-4xl">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -268,7 +268,7 @@ const SolutionsPage = () => {
             Request a Demo
           </motion.button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

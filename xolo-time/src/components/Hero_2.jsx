@@ -4,6 +4,7 @@ import icon_1 from "../assets/track-icon-01.png";
 import icon_2 from "../assets/track-icon-02.png";
 import icon_3 from "../assets/track-icon-03.png";
 import icon_4 from "../assets/track-icon-04.png";
+import { Link } from "react-router-dom";
 
 const cards = [
   {
@@ -52,7 +53,7 @@ const cardVariants = {
 
 const Hero_2 = () => {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-10 overflow-hidden">
       {/* Background Blobs */}
       <motion.div
         className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"
@@ -92,13 +93,16 @@ const Hero_2 = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <Link
+              to={"/signup"} className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <span className="relative z-10">Try Free Demo</span>
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300"></div>
-              </button>
-              <button className="group border-2 border-gray-300 hover:border-cyan-400 text-gray-700 hover:text-cyan-600 font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105">
-                <span className="relative z-10">Watch Demo Video</span>
-              </button>
+              </Link>
+              <Link
+              to={"/contact"}
+               className="group border-2 border-gray-300 hover:border-cyan-400 text-gray-700 hover:text-cyan-600 font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105">
+                <span className="relative z-10">Contact us</span>
+              </Link>
             </div>
           </div>
 

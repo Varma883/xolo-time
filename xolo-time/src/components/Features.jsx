@@ -64,11 +64,6 @@ const cards = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const Features = () => {
   const [flippedCards, setFlippedCards] = useState({});
 
@@ -77,8 +72,8 @@ const Features = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 via-sky-100 to-blue-100 relative overflow-hidden">
-      <div className="mx-auto text-center max-w-6xl relative z-10">
+    <section className="py-10 bg-gradient-to-b from-blue-50 via-sky-100/70 to-blue-100 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -100,23 +95,20 @@ const Features = () => {
             return (
               <motion.div
                 key={card.id}
-                className="group [perspective:1200px] h-[520px] w-full cursor-pointer"
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
+                className="relative [perspective:1200px] h-[520px] w-full cursor-pointer group"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
                 onClick={() => toggleFlip(card.id)}
               >
-                {/* Inner Flip */}
+                {/* Inner Flip Wrapper */}
                 <motion.div
-                  className="relative w-full h-full [transform-style:preserve-3d]"
+                  className="relative w-full h-full [transform-style:preserve-3d] transition-transform duration-700 ease-in-out"
                   animate={{ rotateY: isFlipped ? 180 : 0 }}
-                  whileHover={{ rotateY: !isFlipped ? 180 : 180 }}
-                  transition={{ duration: 0.7, ease: "easeInOut" }}
                 >
                   {/* Front Side */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-50 to-blue-100/60 border border-blue-100 rounded-2xl shadow-lg backdrop-blur-sm p-6 flex flex-col items-center justify-between [backface-visibility:hidden]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-between p-6 [backface-visibility:hidden]">
                     <img
                       src={card.image}
                       alt={card.title}
@@ -128,12 +120,15 @@ const Features = () => {
                     <p className="text-gray-600 text-sm mb-5 leading-relaxed">
                       {card.description_front}
                     </p>
-                    <a
-                      href="#"
-                      className="px-5 py-2.5 bg-yellow-400 text-gray-900 font-semibold text-sm rounded-lg shadow-md hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                    <button
+                      className="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 relative z-10"
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent flip on click
+                        window.open("/contact", "_self");
+                      }}
                     >
-                      Try Demo
-                    </a>
+                      Shedule Call
+                    </button>
                   </div>
 
                   {/* Back Side */}
@@ -141,7 +136,6 @@ const Features = () => {
                     <div className="p-3 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 shadow-md mb-5">
                       <card.icon className="w-8 h-8 text-white" />
                     </div>
-
                     <h5 className="text-xl font-bold text-gray-900 mb-3">
                       {card.title}
                     </h5>
@@ -169,7 +163,7 @@ const Features = () => {
         </div>
       </div>
 
-      {/* Decorative Gradient Blobs */}
+      {/* Background Blobs */}
       <div className="absolute top-20 -left-20 w-72 h-72 bg-sky-200/40 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 -right-20 w-80 h-80 bg-blue-300/30 rounded-full blur-3xl"></div>
     </section>

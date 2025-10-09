@@ -243,7 +243,7 @@ const PricingPage = () => {
                     ${plan.popular ? "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600" : "bg-gray-800 hover:bg-gray-900"}
                   `}
                 >
-                  Choose {plan.name}
+                  Choose {plan.name} (Start free trail)
                 </motion.button>
               </motion.div>
             ))}
@@ -333,7 +333,7 @@ const PricingPage = () => {
       </section>
 
       {/* Call to Action Section (Optional, can be at bottom) */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-center">
+      {/* <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-center">
         <div className="mx-auto px-4 max-w-4xl">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -365,7 +365,7 @@ const PricingPage = () => {
             Start Your Free Trial
           </motion.button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

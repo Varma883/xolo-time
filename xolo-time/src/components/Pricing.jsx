@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiCheck } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 const plans = [
   {
@@ -125,13 +126,18 @@ const Pricing = () => {
               </ul>
 
               {/* CTA Button */}
-              <motion.button
+              <Link
+              to={'/pricing'}>
+               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full py-3 px-4 text-white font-medium rounded-lg shadow-md text-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-opacity-90 hover:to-opacity-90 transition mt-auto"
+                
               >
                 Choose Plan
               </motion.button>
+              </Link>
+             
             </motion.div>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import logo from "../assets/logo-white.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IoIosLogIn } from "react-icons/io";
@@ -9,8 +9,8 @@ const navItems = [
   
   { name: "Features", path: "/features" },
   { name: "Solutions", path: "/solutions" },
-  // { name: "Resources", path: "/resources" },
   { name: "Pricing", path: "/pricing" },
+   { name: "Contact Us", path: "/contact" },
 ];
 
 const NavBar = () => {
@@ -39,18 +39,19 @@ const NavBar = () => {
 
           
         {/* CTA Buttons */}
-        <a
-                    href="#"
+        <Link
+                    to={'/signup'}
                     className="bg-cyan-400 text-white px-5 py-2 rounded-md hover:bg-cyan-500 font-medium transition duration-300"
                   >
                     Start free trial
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+
+                   to={'/login'}
                     className="text-white flex items-center gap-2 px-4 py-2 rounded-md border-2 hover:bg-white hover:text-black hover:border-white transition duration-300"
                   >
                     <IoIosLogIn className="text-xl" /> Log in
-                  </a>
+                  </Link>
 
         </ul>
 

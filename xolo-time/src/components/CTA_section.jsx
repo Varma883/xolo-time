@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // <-- Import motion
 import { FiMessageSquare } from 'react-icons/fi'; // <-- Import the icon
+import { Link } from 'react-router-dom';
 
 const CTA_section = () => {
   return (
@@ -33,15 +34,20 @@ const CTA_section = () => {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <motion.button
-              onClick={() => window.location.href = '/contact'}
+            <Link
+            to={'/signup'}>
+               <motion.button
+              
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-blue-400 text-white hover:bg--50 font-semibold px-8 py-3 rounded-lg shadow-lg transition-all"
             >
               Get Started
             </motion.button>
-
+            </Link>
+         
+            <Link
+            to={'/contact'}>
             <motion.a
               href="#demo"
               className="bg-amber-400 hover:bg-yellow-500 font-semibold px-8 py-3 rounded-lg shadow-lg flex items-center gap-2 transition-all"
@@ -51,6 +57,8 @@ const CTA_section = () => {
               <FiMessageSquare className="h-5 w-5" />
               Request Demo
             </motion.a>
+            </Link>
+            
           </motion.div>
         </div>
       </section>
