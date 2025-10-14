@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiX } from "react-icons/fi"; // Added FiX for "Not Included" features
 import  pricingImg from "../assets/demo_feature_3.jpeg" 
+import { Link } from "react-router-dom";
 
 // Data for pricing plans (remains mostly the same, adjusted for comparison table)
 const plans = [
@@ -236,6 +237,8 @@ const PricingPage = () => {
                 </ul>
 
                 {/* CTA Button */}
+                <Link 
+                to={'/contact'}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -245,6 +248,8 @@ const PricingPage = () => {
                 >
                   Choose {plan.name} (Start free trail)
                 </motion.button>
+                </Link>
+                
               </motion.div>
             ))}
           </div>

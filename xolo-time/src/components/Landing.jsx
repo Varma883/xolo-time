@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import hero_img from '../assets/demo_feature_2.jpeg'
 
 const Hero = () => {
   const gridRef = useRef(null);
@@ -20,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className=" relative overflow-hidden pt-28 lg:pt-36 pb px-10">
+    <section className=" relative overflow-hidden pt-28 lg:pt-15 pb-10 px-10">
       {/* Base radial gradient background */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -92,59 +93,30 @@ const Hero = () => {
           {/* <p className="text-gray-500 text-sm">Free 14-day trial • No credit card • Setup in 2 minutes</p> */}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="relative"
-        >
-          {/* <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-            <div
-              className="rounded-lg p-6 text-white mb-6"
-              style={{ background: "linear-gradient(90deg,#1c2584,#11cdef)" }}
-            >
-              <div className="flex justify-between items-center mb-4">
-                <span className="font-semibold">Current Project</span>
-                <span className="opacity-90">02:45:18</span>
-              </div>
-              <div className="w-full bg-white/20 rounded-full h-2">
-                <div className="bg-white h-2 rounded-full w-3/4"></div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              {["Website Redesign", "Client Meeting", "Code Review"].map((p, i) => (
-                <div
-                  key={p}
-                  className="flex items-center justify-between p-3 rounded-lg bg-gray-50 card-hover"
-                >
-                  <span className="font-medium text-gray-700">{p}</span>
-                  <span className="font-semibold" style={{ color: "#1c2584" }}>
-                    01:2{i}:30
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div> */}
-      <img src="https://xolotime.com/landing-assets/img/banner.png" className=""/>
-          {/* Floating accents with parallax hook targets */}
-          <div
-            className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-40"
-            data-parallax
-            style={{ backgroundColor: "rgba(17,205,239,.35)" }}
-          />
-          <div className="absolute inline-block -bottom-5 left-5  h-20 rounded-full ">
-            <span className="bg-blue-800 text-sm  text-white px-5 py-3 rounded-xl w-full  animate-pulse" >Free 14-day trial • No credit card • Setup in 2 minutes
+       <div className="relative bg-white/70 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-3xl overflow-hidden w-[90%] sm:w-[80%] md:w-[85%] lg:w-[100%] mx-auto">
+  {/* MacBook top bar */}
+  <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 border-b border-gray-200">
+    <span className="w-3 h-3 rounded-full bg-red-400"></span>
+    <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
+    <span className="w-3 h-3 rounded-full bg-green-400"></span>
+    <span className="text-gray-500 text-xs ml-3 tracking-wide">MacBook Preview</span>
+  </div>
 
-</span>
-            {/* <span className="bg-blue-800  text-white px-5 py-3 rounded-xl w-full " >Free Trial 14 Days</span> */}
-          </div>
-          {/* <div
-            className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full opacity-30"
-            data-parallax
-            style={{ backgroundColor: "rgba(28,37,132,.22)" }}
-          /> */}
+  {/* Image content */}
+  <div className="relative">
+    <img
+      src={hero_img}
+      alt="Demo preview"
+      className="w-full h-auto object-cover rounded-b-3xl"
+    />
 
-        </motion.div>
+    {/* Floating tag below MacBook */}
+    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-[#1c2584] text-white text-sm px-5 py-2 rounded-xl shadow-lg animate-pulse whitespace-nowrap">
+      Free 14-day trial • No credit card • Setup in 2 minutes
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );

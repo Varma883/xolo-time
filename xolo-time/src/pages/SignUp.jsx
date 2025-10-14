@@ -36,10 +36,10 @@ const SignUp = () => {
           <div className="flex justify-center md:justify-start mb-6">
             <img src={logo} alt="Company Logo" className="h-10" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+          <h1 className="text-3xl md:text-3xl font-extrabold text-gray-900 mb-3">
             Sign Up & Start Tracking
           </h1>
-          <p className="text-gray-600 mb-8 text-lg">
+          <p className="text-gray-600 mb-8 text-sm">
             Join thousands of teams simplifying their time management.
           </p>
           <form onSubmit={handleSubmit} className="space-y-5 max-w-md mx-auto md:mx-0">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { VscOrganization } from "react-icons/vsc";
 import { FaCheck } from "react-icons/fa6";
@@ -58,114 +58,98 @@ const cards = [
       { name: "Attendance Logs" },
       { name: "Absence Reports" },
       { name: "Work Hour Validation" },
-      { name: "Task management" },
       { name: "Shift scheduling" },
     ],
   },
 ];
 
 const Features = () => {
-  const [flippedCards, setFlippedCards] = useState({});
-
-  const toggleFlip = (id) => {
-    setFlippedCards((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
-    <section className="py-10 bg-gradient-to-b from-blue-50 via-sky-100/70 to-blue-100 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto text-center relative z-10">
+    <section className="py-20 bg-gradient-to-b from-blue-50 via-sky-100/50 to-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto text-center relative z-10 px-6">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="inline-block px-6 py-2 bg-blue-100 rounded-full mb-12 shadow-sm"
+          className="inline-block px-8 py-3 bg-white/80 backdrop-blur-xl rounded-full mb-16 shadow-sm border border-blue-100"
         >
           <span className="text-blue-700 font-semibold text-lg tracking-wide">
-            Xolotime Features
+             Xolotime Features
           </span>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-10 px-6">
-          {cards.map((card, idx) => {
-            const isFlipped = flippedCards[card.id] || false;
-
-            return (
-              <motion.div
-                key={card.id}
-                className="relative [perspective:1200px] h-[520px] w-full cursor-pointer group"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                onClick={() => toggleFlip(card.id)}
-              >
-                {/* Inner Flip Wrapper */}
-                <motion.div
-                  className="relative w-full h-full [transform-style:preserve-3d] transition-transform duration-700 ease-in-out"
-                  animate={{ rotateY: isFlipped ? 180 : 0 }}
-                >
-                  {/* Front Side */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-between p-6 [backface-visibility:hidden]">
+        <div className="grid md:grid-cols-3 gap-10">
+          {cards.map((card, idx) => (
+            <motion.div
+              key={card.id}
+              className="group relative [perspective:1200px] h-[520px] cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.15 }}
+            >
+              <div className="relative w-full h-full [transform-style:preserve-3d] transition-transform duration-[1.2s] ease-[cubic-bezier(0.2,0.85,0.4,1.1)] group-hover:[transform:rotateY(180deg)]">
+                {/* Front Side */}
+                <div className="absolute inset-0 bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col items-center justify-between p-6 [backface-visibility:hidden]">
+                  <div className="relative">
                     <img
                       src={card.image}
                       alt={card.title}
-                      className="rounded-xl w-[280px] h-[180px] object-cover mb-4 shadow-md"
+                      className="rounded-2xl w-[280px] h-[180px] object-cover mb-4 shadow-md"
                     />
-                    <h5 className="text-xl font-bold text-gray-900 mb-3">
-                      {card.title}
-                    </h5>
-                    <p className="text-gray-600 text-sm mb-5 leading-relaxed">
-                      {card.description_front}
-                    </p>
-                    <button
-                      className="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 relative z-10"
-                      onClick={(e) => {
-                        e.stopPropagation(); // Prevent flip on click
-                        window.open("/contact", "_self");
-                      }}
-                    >
-                      Shedule Call
-                    </button>
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
+                  <h5 className="text-xl font-bold text-gray-900 mb-3">
+                    {card.title}
+                  </h5>
+                  <p className="text-gray-600 text-sm mb-5 leading-relaxed">
+                    {card.description_front}
+                  </p>
+                </div>
 
-                  {/* Back Side */}
-                  <div className="absolute inset-0 bg-white border border-gray-100 rounded-2xl shadow-xl p-6 flex flex-col items-start justify-start [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                    <div className="p-3 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 shadow-md mb-5">
-                      <card.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h5 className="text-xl font-bold text-gray-900 mb-3">
-                      {card.title}
-                    </h5>
-                    <p className="text-gray-600 text-sm mb-5 leading-relaxed">
-                      {card.description_back}
-                    </p>
-                    <ul className="flex flex-col gap-3">
-                      {card.list_back.map((item, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center gap-3 text-gray-700 text-sm"
-                        >
-                          <span className="p-1.5 rounded-full bg-gradient-to-tr from-yellow-400 to-yellow-500 shadow-sm">
-                            <FaCheck className="text-white text-xs" />
-                          </span>
-                          {item.name}
-                        </li>
-                      ))}
-                    </ul>
+                {/* Back Side */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-blue-50/90 backdrop-blur-xl border border-gray-100 rounded-3xl shadow-2xl p-6 flex flex-col items-start justify-start [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <div className="p-3 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 shadow-md mb-5">
+                    <card.icon className="w-8 h-8 text-white" />
                   </div>
-                </motion.div>
-              </motion.div>
-            );
-          })}
+                  <h5 className="text-xl font-bold text-gray-900 mb-3">
+                    {card.title}
+                  </h5>
+                  <p className="text-gray-600 text-sm mb-5 leading-relaxed">
+                    {card.description_back}
+                  </p>
+                  <ul className="flex flex-col gap-3 mb-6">
+                    {card.list_back.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-gray-700 text-sm"
+                      >
+                        <span className="p-1.5 rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 shadow-sm">
+                          <FaCheck className="text-white text-xs" />
+                        </span>
+                        {item.name}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-semibold text-sm rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                    onClick={() => window.open("/contact", "_self")}
+                  >
+                    Schedule a Call
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
       {/* Background Blobs */}
-      <div className="absolute top-20 -left-20 w-72 h-72 bg-sky-200/40 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 -right-20 w-80 h-80 bg-blue-300/30 rounded-full blur-3xl"></div>
+      <div className="absolute top-32 -left-20 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-3xl"></div>
     </section>
   );
 };

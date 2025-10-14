@@ -12,28 +12,28 @@ const cards = [
     title: "Track Teams",
     image: icon_1,
     description:
-      "Gain complete visibility into how much time your team spends on specific projects and tasks. With Xolotime, you can easily allocate hours, identify bottlenecks, and ensure projects are delivered on time and on budget.",
+      "Gain complete visibility into how much time your team spends on specific projects and tasks. Allocate hours, identify bottlenecks, and ensure timely delivery.",
   },
   {
     id: 2,
     title: "Track Projects",
     image: icon_2,
     description:
-      "Monitor team productivity without micromanaging. Xolotime provides transparent insights into workload distribution, collaboration patterns, and activity trends, helping you balance responsibilities and support your employees effectively.",
+      "Monitor productivity transparently without micromanagement. Get workload insights, collaboration trends, and ensure balanced team performance.",
   },
   {
     id: 3,
     title: "Boost Productivity",
     image: icon_3,
     description:
-      "Identify distractions and wasted effort, and empower employees with clear usage reports to optimize their workflow. By understanding work habits, managers and individuals can focus more on high-impact activities, improving overall efficiency.",
+      "Eliminate distractions and enhance efficiency with clear insights into daily activity patterns to help teams focus on high-impact tasks.",
   },
   {
     id: 4,
     title: "Insights & Reports",
     image: icon_4,
     description:
-      "Turn raw time data into actionable insights with Xolotime's powerful analytics dashboard. Generate custom reports to evaluate performance, measure ROI, and make informed business decisions based on real data in real time.",
+      "Convert time data into actionable insights with customizable reports and analytics that drive performance and business outcomes.",
   },
 ];
 
@@ -47,60 +47,63 @@ const blobVariants = {
 };
 
 const cardVariants = {
-  offscreen: { opacity: 0, y: 50 },
+  offscreen: { opacity: 0, y: 40 },
   onscreen: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const Hero_2 = () => {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-10 overflow-hidden">
-      {/* Background Blobs */}
+    <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-20 overflow-hidden">
+      {/* Animated Blobs */}
       <motion.div
-        className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+        className="absolute top-0 left-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply blur-3xl opacity-40"
         variants={blobVariants}
         animate="animate"
       />
       <motion.div
-        className="absolute top-0 right-0 w-72 h-72 bg-cyan-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+        className="absolute top-0 right-0 w-80 h-80 bg-cyan-100 rounded-full mix-blend-multiply blur-3xl opacity-40"
         variants={blobVariants}
         animate="animate"
         transition={{ delay: 2 }}
       />
       <motion.div
-        className="absolute -bottom-8 left-20 w-72 h-72 bg-sky-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+        className="absolute -bottom-10 left-24 w-80 h-80 bg-sky-100 rounded-full mix-blend-multiply blur-3xl opacity-40"
         variants={blobVariants}
         animate="animate"
         transition={{ delay: 4 }}
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[40%_1fr] gap-12 lg:gap-20 items-center">
           {/* Left Section */}
           <div className="flex flex-col gap-8">
             <div>
               <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
                 Why Choose Xolotime
               </span>
-              <h1 className="text-5xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6 font-sans">
+              <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6 font-sans">
                 Transform How You{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
                   Track Time
                 </span>
               </h1>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Forget timers, note-taking, and manual input. XOLO Time tracks all your web and desktop activities automatically, providing precise daily records for documents, meetings, emails, websites, and video calls — effortlessly.
+              <p className="text-base text-gray-600 leading-relaxed">
+                Forget timers and manual logs. XOLO Time automatically captures your workflow across apps, meetings, and tasks — giving you precise insights into productivity, effortlessly.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-              to={"/signup"} className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                to={"/signup"}
+                className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
                 <span className="relative z-10">Try Free Demo</span>
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300"></div>
               </Link>
               <Link
-              to={"/contact"}
-               className="group border-2 border-gray-300 hover:border-cyan-400 text-gray-700 hover:text-cyan-600 font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105">
+                to={"/contact"}
+                className="group border-2 border-gray-300 hover:border-cyan-400 text-gray-700 hover:text-cyan-600 font-semibold rounded-xl px-8 py-4 transition-all duration-300 transform hover:scale-105"
+              >
                 <span className="relative z-10">Contact us</span>
               </Link>
             </div>
@@ -111,36 +114,46 @@ const Hero_2 = () => {
             {cards.map((card) => (
               <motion.div
                 key={card.id}
-                className="group relative bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50 hover:border-cyan-100/50"
+                className="group relative bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50 hover:border-cyan-100/50"
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={cardVariants}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 <div className="relative z-10 h-full flex flex-col">
-                  <div className="">
-                    <img 
-                      src={card.image} 
-                      alt={card.title} 
-                      className="w-20 h-20 object-contain filter group-hover:brightness-110 transition-all duration-300" 
+                  <div className="flex justify-center mb-4">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-16 h-16 object-contain filter group-hover:brightness-110 transition-all duration-300"
                     />
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 text-center sm:text-left">
                     {card.title}
                   </h3>
-                  
-                  <p className="text-gray-600 text-sm leading-relaxed flex-grow">
+
+                  <p className="text-gray-600 text-sm leading-relaxed flex-grow text-center sm:text-left">
                     {card.description}
                   </p>
-                  
+
                   <div className="mt-4 pt-4 border-t border-gray-100/50">
                     <button className="text-cyan-600 hover:text-cyan-700 font-medium text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                       Learn more
-                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      <svg
+                        className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </button>
                   </div>
