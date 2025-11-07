@@ -8,34 +8,34 @@ import { VscDashboard } from "react-icons/vsc";
 
 const list = [
   {
-    heading: "Smart Activity Recognition",
+    heading: "Automatic Screenshots Every 5 Minutes",
     discription:
-      "Xolotime automatically distinguishes between active, idle, and away time based on real user behavior — no manual intervention needed.",
+      "Xolotime captures high-quality screenshots at five-minute intervals — providing a consistent, transparent view of team activity throughout the day.",
   },
   {
-    heading: "Visual Productivity Timeline",
+    heading: "Manager-Initiated On-Demand Screenshots",
     discription:
-      "See a clear timeline of your workday with color-coded activity bars, making it easy to spot patterns, breaks, and productivity peaks.",
+      "Need to verify progress instantly? Managers can take a force screenshot of any active user to review work status or address project bottlenecks in real time.",
   },
   {
-    heading: "Idle Time Insights",
+    heading: "Secure & Encrypted Storage",
     discription:
-      "Understand when and why idle time occurs — whether it’s breaks, meetings, or context switching — and optimize workflows accordingly.",
+      "All screenshots are automatically encrypted, timestamped, and securely stored — accessible only to authorized roles for review and compliance.",
   },
   {
-    heading: "Privacy-Respectful Monitoring",
+    heading: "Privacy-First Monitoring",
     discription:
-      "No screenshots, no intrusive spying. Xolotime captures only what matters — activity metrics — respecting user trust and compliance.",
+      "Employees are always notified when screenshots are taken. Xolotime captures work context, not personal data, maintaining full transparency and trust.",
   },
   {
-    heading: "Wellness & Focus Metrics",
+    heading: "Compliance & Audit Ready",
     discription:
-      "Encourage healthier work habits by identifying overwork and fatigue patterns. Promote balance and focus through actionable reports.",
+      "Maintain clear visual records for labor audits, client billing, and remote work verification — ensuring every screenshot supports fair and ethical practices.",
   },
   {
-    heading: "Performance Heatmaps",
+    heading: "Dashboard Visualization",
     discription:
-      "Visualize when your team is most productive across hours or days — helping managers allocate resources and deadlines efficiently.",
+      "Screenshots appear in intuitive dashboards alongside time, activity, and project metrics — turning raw visuals into actionable insights.",
   },
 ];
 
@@ -53,26 +53,25 @@ const Active_idle_tracking = () => {
         {/* Tagline */}
         <div className="mb-6 inline-flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg shadow-cyan-200/40">
           <h1 className="text-lg sm:text-xl font-semibold text-white tracking-wide">
-            Active & Idle Time Tracking
+            Screenshot Monitoring
           </h1>
         </div>
 
         {/* Main Heading */}
         <div className="max-w-4xl space-y-5">
           <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-            Understand How{" "}
-            <span className="text-cyan-500">Work Actually Happens</span> in Real
-            Time
+            Visual Transparency{" "}
+            <span className="text-cyan-500">Without Micromanagement</span>
           </h1>
 
           <h2 className="text-2xl sm:text-3xl text-gray-800 font-semibold leading-snug">
-            Smarter Workday Tracking with Xolotime
+            Transparent Work Monitoring Made Simple
           </h2>
 
           <p className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Xolotime intelligently monitors keyboard and mouse activity to
-            reveal when teams are active, idle, or away — helping leaders
-            improve productivity, balance, and focus.
+            Xolotime automatically captures screen activity every 5 minutes,
+            offering managers accurate visibility into workflows — while
+            maintaining user trust and data privacy.
           </p>
         </div>
 
@@ -116,7 +115,7 @@ const Active_idle_tracking = () => {
         <div className="max-w-7xl mx-auto">
           {/* Tagline */}
           <div className="w-fit px-5 py-2 mx-auto rounded-full bg-sky-200/60 text-sky-800 text-sm font-medium mb-10 shadow-sm backdrop-blur-sm">
-            Intelligent Activity Monitoring with Xolotime
+            Real-Time Screenshot Intelligence
           </div>
 
           {/* Description + Image */}
@@ -124,22 +123,18 @@ const Active_idle_tracking = () => {
             {/* Text Content */}
             <div className="flex-1 max-w-2xl">
               <p className="text-gray-700 text-lg leading-relaxed mb-5">
-                Xolotime’s Active & Idle Time Tracking transforms passive
-                monitoring into meaningful insights. By intelligently analyzing
-                keystrokes, mouse motion, and idle gaps, it automatically
-                classifies user time into Active, Idle, or Away — creating a
-                complete timeline of productivity patterns.
+                With Xolotime Screenshot Monitoring, teams achieve the perfect
+                balance between transparency and autonomy. Screenshots are taken
+                automatically every 5 minutes, giving managers a visual overview
+                of ongoing tasks, application usage, and focus levels — all
+                without interrupting employee flow.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Instead of relying on manual inputs or self-reporting, Xolotime
-                detects activity in real-time to provide an accurate reflection
-                of work behavior. Employees see how they spend their day — from
-                focused work to meetings or short pauses — enabling healthier
-                time habits. Managers gain transparent dashboards highlighting
-                engagement levels, average idle durations, and peak activity
-                hours. The result? Optimized team scheduling, reduced burnout,
-                and smarter performance evaluations that focus on outcomes, not
-                micromanagement.
+                Need immediate clarity? Managers can initiate an on-demand
+                screenshot of any team member’s screen when required
+                for audits, project reviews, or compliance checks. Every capture
+                is timestamped, securely encrypted, and stored in the cloud for
+                easy access and reporting..
               </p>
             </div>
 
@@ -155,21 +150,27 @@ const Active_idle_tracking = () => {
 
           {/* Feature Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {list.map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white/70 border border-gray-100 hover:border-sky-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm"
-              >
-                <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-2 group-hover:text-sky-600 transition-colors duration-300">
-                  <VscDashboard className="text-sky-500 text-xl" />
-                  {item.heading}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.discription}
-                </p>
-              </div>
-            ))}
-          </div>
+  {list.map((item, index) => (
+    <div
+      key={index}
+      className="group flex flex-col justify-between bg-white/80 border border-gray-100 hover:border-sky-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm h-full"
+    >
+      <div>
+        <h3
+          className="flex items-start gap-2 text-lg font-semibold text-gray-800 mb-3 group-hover:text-sky-600 transition-colors duration-300 leading-snug min-h-[48px] line-clamp-2"
+          title={item.heading}
+        >
+          <VscDashboard className="text-sky-500 text-xl shrink-0 mt-0.5" />
+          <span className="break-words">{item.heading}</span>
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+          {item.discription}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
 
         {/* Decorative blurred gradients */}

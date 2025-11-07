@@ -231,7 +231,7 @@ const Features_full = () => {
           <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-cyan-500 transition-colors duration-300">
             {item.name}
           </h3>
-          <p className="text-gray-600 text-sm lg:text-base text-center mb-6 leading-relaxed">
+          <p className="text-gray-600 text-justify text-sm lg:text-base  mb-6 leading-relaxed">
             {item.discription || item.description}
           </p>
           <Link

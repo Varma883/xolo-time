@@ -8,39 +8,38 @@ import { VscDashboard } from "react-icons/vsc";
 
 const list = [
   {
-    heading: "Smart Activity Recognition",
+    heading: "Comprehensive Productivity Scores",
     discription:
-      "Xolotime automatically distinguishes between active, idle, and away time based on real user behavior — no manual intervention needed.",
+      "Measure productivity based on real-time activity, app usage, and task completion — giving a clear picture of how efficiently teams work.",
   },
   {
-    heading: "Visual Productivity Timeline",
+    heading: "Application & Website Usage Insights",
     discription:
-      "See a clear timeline of your workday with color-coded activity bars, making it easy to spot patterns, breaks, and productivity peaks.",
+      "Understand which tools drive focus and which cause distractions. Xolotime breaks down active vs. idle app time for precise efficiency tracking.",
   },
   {
-    heading: "Idle Time Insights",
+    heading: "Performance Trends & Comparisons",
     discription:
-      "Understand when and why idle time occurs — whether it’s breaks, meetings, or context switching — and optimize workflows accordingly.",
+      "Visualize productivity trends over days, weeks, and months to identify improvement areas and recognize consistent top performers.",
   },
   {
-    heading: "Privacy-Respectful Monitoring",
+    heading: "Goal-Oriented Dashboards",
     discription:
-      "No screenshots, no intrusive spying. Xolotime captures only what matters — activity metrics — respecting user trust and compliance.",
+      "Set custom productivity goals, track progress in real time, and receive automated summaries to support better team performance management.",
   },
   {
-    heading: "Wellness & Focus Metrics",
+    heading: "Data-Driven Coaching",
     discription:
-      "Encourage healthier work habits by identifying overwork and fatigue patterns. Promote balance and focus through actionable reports.",
+      "Use insights from activity and performance reports to guide employees, balance workloads, and enhance overall team efficiency.",
   },
   {
-    heading: "Performance Heatmaps",
+    heading: "Customizable Reporting",
     discription:
-      "Visualize when your team is most productive across hours or days — helping managers allocate resources and deadlines efficiently.",
+      "Generate detailed, exportable reports filtered by team, department, or timeframe — perfect for performance reviews and strategic decisions.",
   },
 ];
 
-
-const Active_idle_tracking = () => {
+const Productivity_Analysis = () => {
   return (
     <>
       <section className="mt-5 relative flex flex-col items-center justify-center min-h-screen overflow-hidden bg-gradient-to-b from-white via-sky-200 to-cyan-200 px-6 lg:px-10 text-center">
@@ -53,26 +52,25 @@ const Active_idle_tracking = () => {
         {/* Tagline */}
         <div className="mb-6 inline-flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg shadow-cyan-200/40">
           <h1 className="text-lg sm:text-xl font-semibold text-white tracking-wide">
-            Active & Idle Time Tracking
+            Productivity Analysis
           </h1>
         </div>
 
         {/* Main Heading */}
         <div className="max-w-4xl space-y-5">
           <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-            Understand How{" "}
-            <span className="text-cyan-500">Work Actually Happens</span> in Real
-            Time
+            Smart Productivity{" "}
+            <span className="text-cyan-500"> Analysis with Xolotime</span>
           </h1>
 
           <h2 className="text-2xl sm:text-3xl text-gray-800 font-semibold leading-snug">
-            Smarter Workday Tracking with Xolotime
+            Turn Work Data Into Actionable Insights
           </h2>
 
           <p className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Xolotime intelligently monitors keyboard and mouse activity to
-            reveal when teams are active, idle, or away — helping leaders
-            improve productivity, balance, and focus.
+            Analyze activity patterns, app usage, and task outcomes to uncover
+            what drives performance — empowering teams with real, measurable
+            productivity intelligence.
           </p>
         </div>
 
@@ -116,7 +114,7 @@ const Active_idle_tracking = () => {
         <div className="max-w-7xl mx-auto">
           {/* Tagline */}
           <div className="w-fit px-5 py-2 mx-auto rounded-full bg-sky-200/60 text-sky-800 text-sm font-medium mb-10 shadow-sm backdrop-blur-sm">
-            Intelligent Activity Monitoring with Xolotime
+            Seamless Productivity Intelligence
           </div>
 
           {/* Description + Image */}
@@ -124,22 +122,19 @@ const Active_idle_tracking = () => {
             {/* Text Content */}
             <div className="flex-1 max-w-2xl">
               <p className="text-gray-700 text-lg leading-relaxed mb-5">
-                Xolotime’s Active & Idle Time Tracking transforms passive
-                monitoring into meaningful insights. By intelligently analyzing
-                keystrokes, mouse motion, and idle gaps, it automatically
-                classifies user time into Active, Idle, or Away — creating a
-                complete timeline of productivity patterns.
+                Xolotime transforms everyday work data into meaningful insights.
+                By tracking active time, application usage, and task completion,
+                it generates accurate productivity scores that reflect true
+                performance — not just time spent online.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Instead of relying on manual inputs or self-reporting, Xolotime
-                detects activity in real-time to provide an accurate reflection
-                of work behavior. Employees see how they spend their day — from
-                focused work to meetings or short pauses — enabling healthier
-                time habits. Managers gain transparent dashboards highlighting
-                engagement levels, average idle durations, and peak activity
-                hours. The result? Optimized team scheduling, reduced burnout,
-                and smarter performance evaluations that focus on outcomes, not
-                micromanagement.
+                With detailed dashboards, visual reports, and trend analytics,
+                managers can easily identify top performers, detect burnout
+                risks, and optimize workflows across teams. 
+                Whether for remote,
+                hybrid, or in-office setups, Xolotime delivers clarity,
+                fairness, and focus — helping businesses build data-informed
+                productivity cultures.
               </p>
             </div>
 
@@ -158,15 +153,20 @@ const Active_idle_tracking = () => {
             {list.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white/70 border border-gray-100 hover:border-sky-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm"
+                className="group flex flex-col justify-between bg-white/80 border border-gray-100 hover:border-sky-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm h-full"
               >
-                <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-2 group-hover:text-sky-600 transition-colors duration-300">
-                  <VscDashboard className="text-sky-500 text-xl" />
-                  {item.heading}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.discription}
-                </p>
+                <div>
+                  <h3
+                    className="flex items-start gap-2 text-lg font-semibold text-gray-800 mb-3 group-hover:text-sky-600 transition-colors duration-300 leading-snug min-h-[48px] line-clamp-2"
+                    title={item.heading}
+                  >
+                    <VscDashboard className="text-sky-500 text-xl shrink-0 mt-0.5" />
+                    <span className="break-words">{item.heading}</span>
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    {item.discription}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -180,4 +180,4 @@ const Active_idle_tracking = () => {
   );
 };
 
-export default Active_idle_tracking;
+export default Productivity_Analysis;

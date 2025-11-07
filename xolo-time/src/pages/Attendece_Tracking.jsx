@@ -8,39 +8,39 @@ import { VscDashboard } from "react-icons/vsc";
 
 const list = [
   {
-    heading: "Smart Activity Recognition",
+    heading: "Automated Attendance Logging",
     discription:
-      "Xolotime automatically distinguishes between active, idle, and away time based on real user behavior — no manual intervention needed.",
+      "Clock-ins, clock-outs, breaks, and absences are automatically recorded — no manual data entry or spreadsheets required.",
   },
   {
-    heading: "Visual Productivity Timeline",
+    heading: "Custom Attendance Policies",
     discription:
-      "See a clear timeline of your workday with color-coded activity bars, making it easy to spot patterns, breaks, and productivity peaks.",
+      "Set flexible rules for work hours, late arrivals, and breaks that fit your company’s policies and regional compliance standards.",
   },
   {
-    heading: "Idle Time Insights",
+    heading: "Real-Time Notifications",
     discription:
-      "Understand when and why idle time occurs — whether it’s breaks, meetings, or context switching — and optimize workflows accordingly.",
+      "Receive instant alerts for late logins, extended idle time, or early departures — helping managers respond quickly and fairly.",
   },
   {
-    heading: "Privacy-Respectful Monitoring",
+    heading: "Seamless Payroll Integration",
     discription:
-      "No screenshots, no intrusive spying. Xolotime captures only what matters — activity metrics — respecting user trust and compliance.",
+      "Connect attendance data directly with payroll to automate salary calculations, overtime adjustments, and leave deductions.",
   },
   {
-    heading: "Wellness & Focus Metrics",
+    heading: "Centralized Dashboard",
     discription:
-      "Encourage healthier work habits by identifying overwork and fatigue patterns. Promote balance and focus through actionable reports.",
+      "Get a unified view of every employee’s attendance status, trends, and exceptions through a clean, visual dashboard.",
   },
   {
-    heading: "Performance Heatmaps",
+    heading: "Absence & Leave Insights",
     discription:
-      "Visualize when your team is most productive across hours or days — helping managers allocate resources and deadlines efficiently.",
+      "Track approved leaves, holidays, and absences automatically — ensuring smooth scheduling and balanced workloads.",
   },
 ];
 
 
-const Active_idle_tracking = () => {
+const Attendece_Tracking = () => {
   return (
     <>
       <section className="mt-5 relative flex flex-col items-center justify-center min-h-screen overflow-hidden bg-gradient-to-b from-white via-sky-200 to-cyan-200 px-6 lg:px-10 text-center">
@@ -53,26 +53,25 @@ const Active_idle_tracking = () => {
         {/* Tagline */}
         <div className="mb-6 inline-flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg shadow-cyan-200/40">
           <h1 className="text-lg sm:text-xl font-semibold text-white tracking-wide">
-            Active & Idle Time Tracking
+            Attendance Tracking
           </h1>
         </div>
 
         {/* Main Heading */}
         <div className="max-w-4xl space-y-5">
           <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-            Understand How{" "}
-            <span className="text-cyan-500">Work Actually Happens</span> in Real
-            Time
+            Precision{" "}
+            <span className="text-cyan-500">Attendance, Simplified</span>
           </h1>
 
           <h2 className="text-2xl sm:text-3xl text-gray-800 font-semibold leading-snug">
-            Smarter Workday Tracking with Xolotime
+            Smarter Attendance for Smarter Teams
           </h2>
 
           <p className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Xolotime intelligently monitors keyboard and mouse activity to
-            reveal when teams are active, idle, or away — helping leaders
-            improve productivity, balance, and focus.
+            Automate clock-ins, track breaks, and monitor attendance in real
+            time — all from a unified dashboard that ensures accuracy,
+            compliance, and transparency.
           </p>
         </div>
 
@@ -116,7 +115,7 @@ const Active_idle_tracking = () => {
         <div className="max-w-7xl mx-auto">
           {/* Tagline */}
           <div className="w-fit px-5 py-2 mx-auto rounded-full bg-sky-200/60 text-sky-800 text-sm font-medium mb-10 shadow-sm backdrop-blur-sm">
-            Intelligent Activity Monitoring with Xolotime
+            Effortless Attendance Oversight
           </div>
 
           {/* Description + Image */}
@@ -124,22 +123,18 @@ const Active_idle_tracking = () => {
             {/* Text Content */}
             <div className="flex-1 max-w-2xl">
               <p className="text-gray-700 text-lg leading-relaxed mb-5">
-                Xolotime’s Active & Idle Time Tracking transforms passive
-                monitoring into meaningful insights. By intelligently analyzing
-                keystrokes, mouse motion, and idle gaps, it automatically
-                classifies user time into Active, Idle, or Away — creating a
-                complete timeline of productivity patterns.
+                Xolotime redefines attendance management for modern teams. Every
+                check-in, break, and checkout is logged automatically,
+                eliminating manual entries and timesheet errors. Whether your
+                team works on-site, hybrid, or remote, Xolotime provides a
+                centralized system to track presence, punctuality, and
+                productivity with ease.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Instead of relying on manual inputs or self-reporting, Xolotime
-                detects activity in real-time to provide an accurate reflection
-                of work behavior. Employees see how they spend their day — from
-                focused work to meetings or short pauses — enabling healthier
-                time habits. Managers gain transparent dashboards highlighting
-                engagement levels, average idle durations, and peak activity
-                hours. The result? Optimized team scheduling, reduced burnout,
-                and smarter performance evaluations that focus on outcomes, not
-                micromanagement.
+                With real-time alerts, custom attendance rules, and seamless
+                payroll integration, managers stay informed and employees stay
+                empowered. No micromanagement — just clear, reliable insights
+                that promote accountability and efficiency.
               </p>
             </div>
 
@@ -180,4 +175,4 @@ const Active_idle_tracking = () => {
   );
 };
 
-export default Active_idle_tracking;
+export default Attendece_Tracking;

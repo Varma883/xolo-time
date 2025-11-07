@@ -13,6 +13,13 @@ import ContactUsPage from "./pages/ContactUsPage";
 import SignUp from "./pages/SignUp";
 import ScrollToTop from "./ScrollToTop";
 import Login from "./pages/Login";
+import Screenshot_monitoring from './pages/Screenshot_monitoring'
+import Attendece_Tracking from "./pages/Attendece_Tracking";
+import Productivity_Analysis from "./pages/Productivity_Analysis";
+import Project_task_management from "./pages/Project_task_management";
+import App_Url_Monitoring from "./pages/App_Url_Monitoring";
+import Employee_Scheduling from "./pages/Employee_Scheduling";
+import Reports from "./pages/Reports";
 
 const App = () => {
   const location = useLocation();
@@ -28,6 +35,13 @@ const App = () => {
         <Route path="/features" element={<Features_full />} />
         <Route path="/time-tracking" element={<Time_Tracking />} />
         <Route path="/active-idle-tracking" element={<Active_idle_tracking />} />
+        <Route path="/screenshot-monitoring" element={<Screenshot_monitoring/>} />
+        <Route path="/attendece-tracking" element={<Attendece_Tracking/>} />
+        <Route path="/productivity-analysis" element={<Productivity_Analysis/>} />
+        <Route path="/project-task-management" element={<Project_task_management/>} />
+        <Route path="/app-url-monitoring" element={<App_Url_Monitoring/>} />
+        <Route path="/employee-scheduling" element={<Employee_Scheduling/>} />
+        <Route path="/reports" element={<Reports />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/solutions" element={<SolutionsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
